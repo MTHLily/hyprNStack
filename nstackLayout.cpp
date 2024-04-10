@@ -97,7 +97,7 @@ SNstackWorkspaceData* CHyprNstackLayout::getMasterWorkspaceData(const int& ws) {
 
 		
 		try {
-			wsorientation = std::any_cast<char *>(wslayoutopts.at("nstack-orientation"));
+			wsorientation = wslayoutopts.at("nstack-orientation").c_str();
 		} catch (std::exception& e) {Debug::log(ERR, "Nstack layoutopt rule error: {}", e.what());}
 
 		std::string cpporientation = wsorientation;
