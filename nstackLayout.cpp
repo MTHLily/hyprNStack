@@ -1,5 +1,6 @@
 #include "nstackLayout.hpp"
 #include <hyprland/src/Compositor.hpp>
+#include <hyprland/src/SharedDefs.hpp>
 #include <hyprland/src/desktop/DesktopTypes.hpp>
 #include <hyprland/src/helpers/MiscFunctions.hpp>
 #include <hyprland/src/render/decorations/CHyprGroupBarDecoration.hpp>
@@ -333,7 +334,7 @@ void CHyprNstackLayout::onWindowRemovedTiling(PHLWINDOW pWindow) {
     recalculateMonitor(pWindow->m_iMonitorID);
 }
 
-void CHyprNstackLayout::recalculateMonitor(const int& monid) {
+void CHyprNstackLayout::recalculateMonitor(const MONITORID& monid) {
     const auto PMONITOR   = g_pCompositor->getMonitorFromID(monid);
 		if (!PMONITOR || !PMONITOR->activeWorkspace)
 						return;
